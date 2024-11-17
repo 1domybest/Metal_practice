@@ -14,7 +14,7 @@ enum RenderPiplineStateTypes {
 class RenderPiplineStateLibrary {
     private static var renderPiplineStates: [RenderPiplineStateTypes: RenderPiplineState] = [:]
     
-    public static func initailize() {
+    public static func Initailize() {
         createDefaultRenderPipelineStates()
     }
     

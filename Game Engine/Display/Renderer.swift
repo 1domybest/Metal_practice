@@ -1,14 +1,7 @@
-//
-//  Renderer.swift
-//  Game Engine
-//
-//  Created by 온석태 on 11/17/24.
-//
-
 import MetalKit
 
 class Renderer: NSObject {
-    var gameObject: GameObject = GameObject()
+    var player = Player()
 }
 
 extension Renderer: MTKViewDelegate {
@@ -25,7 +18,7 @@ extension Renderer: MTKViewDelegate {
         let commandBuffer = Engine.commandQueue.makeCommandBuffer()
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        self.gameObject.render(renderCommandEncoder: renderCommandEncoder!)
+        self.player.render(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

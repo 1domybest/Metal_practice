@@ -16,7 +16,7 @@ class RenderPiplineDescriptorLibrary {
     
     private static var rednerPipelineDescriptors:[RenderPiplineDescriptorTypes : RenderPiplineDescriptor] = [:]
     
-    public static func initialize() {
+    public static func Initialize() {
         createDefaultRenderPiplineDescriptors()
     }
     
