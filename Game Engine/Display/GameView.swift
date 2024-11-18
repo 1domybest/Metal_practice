@@ -8,6 +8,8 @@ class GameView: MTKView {
         super.init(coder: coder)
         
         self.device = MTLCreateSystemDefaultDevice()
+        
+        // Metal 필수요소 초기화
         Engine.Ignite(device: self.device!)
         
         self.clearColor = Preferences.clearColor

@@ -22,7 +22,10 @@ class Node {
     }
     
     func update(deltaTime: Float) {
+        // 여기서의 child 는 GameObject
         for child in children {
+            // 이 함수를 실행시킨 SandBox에서 좌표를 수정한후 수정한 죄표를 토대로
+            // GameObject에서 메트릭스 업데이트 [단 이 메트릭스의 연산은 Node에서 계산됨]
             child.update(deltaTime: deltaTime)
         }
     }

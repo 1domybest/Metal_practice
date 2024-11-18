@@ -22,12 +22,17 @@ class GameObject: Node{
 
 extension GameObject: Renderable {
     func doRender(renderCommandEncoder: MTLRenderCommandEncoder) {
-                renderCommandEncoder.setVertexBytes(&modelContants, length: ModelConstants.stride() , index: 1)
+
                 renderCommandEncoder.setRenderPipelineState(RenderPiplineStateLibrary.PiplineState(.Basic))
                 
+                // 기본 모양을 위한 버텍스
                 renderCommandEncoder.setVertexBuffer(mesh.vertexBuffer,
                                                       offset: 0,
                                                       index: 0)
+        
+                // 움직임을 위한 메트릭스 버텍스
+                renderCommandEncoder.setVertexBytes(&modelContants, length: ModelConstants.stride() , index: 1)
+                
                 
                 renderCommandEncoder.drawPrimitives(type: .triangle,
                                                      vertexStart: 0,
