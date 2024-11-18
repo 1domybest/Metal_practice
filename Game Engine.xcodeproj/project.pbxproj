@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D115C3C92CEB16C200268563 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115C3C82CEB16C200268563 /* Math.swift */; };
+		D115C3CC2CEB289300268563 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115C3CB2CEB289300268563 /* Scene.swift */; };
+		D115C3CE2CEB2AA800268563 /* SandBoxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115C3CD2CEB2AA800268563 /* SandBoxScene.swift */; };
+		D115C3D12CEB2B9000268563 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115C3D02CEB2B9000268563 /* SceneManager.swift */; };
 		D1C20CE32CE9D7BA00F7AA11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C20CDA2CE9D7BA00F7AA11 /* AppDelegate.swift */; };
 		D1C20CE42CE9D7BA00F7AA11 /* Game_Engine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1C20CDD2CE9D7BA00F7AA11 /* Game_Engine.xcdatamodeld */; };
 		D1C20CE62CE9D7BA00F7AA11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C20CDB2CE9D7BA00F7AA11 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D115C3C82CEB16C200268563 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		D115C3CB2CEB289300268563 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		D115C3CD2CEB2AA800268563 /* SandBoxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBoxScene.swift; sourceTree = "<group>"; };
+		D115C3D02CEB2B9000268563 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		D1C20CA92CE9D78000F7AA11 /* Game Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C20CBD2CE9D78200F7AA11 /* Game EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game EngineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C20CC72CE9D78200F7AA11 /* Game EngineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game EngineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +110,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D115C3C72CEB16B200268563 /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				D115C3C82CEB16C200268563 /* Math.swift */,
+			);
+			path = Maths;
+			sourceTree = "<group>";
+		};
+		D115C3CA2CEB288900268563 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D115C3CB2CEB289300268563 /* Scene.swift */,
+				D115C3CD2CEB2AA800268563 /* SandBoxScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D115C3CF2CEB2B7300268563 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D115C3D02CEB2B9000268563 /* SceneManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		D1C20CA02CE9D78000F7AA11 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +158,10 @@
 		D1C20CE12CE9D7BA00F7AA11 /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
+				D115C3C72CEB16B200268563 /* Maths */,
 				D1E0E21B2CEA0AD4001E195B /* Core */,
 				D1E0E21C2CEA0AD8001E195B /* Libraries */,
+				D115C3CF2CEB2B7300268563 /* Manager */,
 				D1E0E21D2CEA0ADF001E195B /* Shaders */,
 				D1E0E22D2CEA1894001E195B /* GameShizz */,
 				D1E0E21E2CEA0AE2001E195B /* Display */,
@@ -207,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E0E2382CEA2217001E195B /* Node.swift */,
+				D115C3CA2CEB288900268563 /* Scenes */,
 				D1E0E23D2CEA22F2001E195B /* Game Objects */,
 				D1E0E23A2CEA2262001E195B /* Protocols */,
 			);
@@ -377,12 +413,16 @@
 				D1E0E2312CEA1A09001E195B /* Renderer.swift in Sources */,
 				D1C20CE32CE9D7BA00F7AA11 /* AppDelegate.swift in Sources */,
 				D1E0E22A2CEA124B001E195B /* RenderPiplineDescriptorLibrary.swift in Sources */,
+				D115C3D12CEB2B9000268563 /* SceneManager.swift in Sources */,
 				D1E0E2162CE9DAC6001E195B /* GameView.swift in Sources */,
+				D115C3C92CEB16C200268563 /* Math.swift in Sources */,
 				D1E0E22F2CEA18B3001E195B /* GameObject.swift in Sources */,
 				D1E0E2392CEA2217001E195B /* Node.swift in Sources */,
+				D115C3CE2CEB2AA800268563 /* SandBoxScene.swift in Sources */,
 				D1E0E21A2CEA088F001E195B /* Types.swift in Sources */,
 				D1E0E22C2CEA15B9001E195B /* RenderPiplineStateLibrary.swift in Sources */,
 				D1E0E2352CEA213E001E195B /* Player.swift in Sources */,
+				D115C3CC2CEB289300268563 /* Scene.swift in Sources */,
 				D1C20CE42CE9D7BA00F7AA11 /* Game_Engine.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,19 +32,19 @@ class RenderPiplineDescriptorLibrary {
 
 protocol RenderPiplineDescriptor {
     var name:String { get }
-    var renderPiplineDescriptor: MTLRenderPipelineDescriptor { get }
+    var renderPiplineDescriptor: MTLRenderPipelineDescriptor! { get }
 }
 
 public struct Basic_RednerPiplineDescriptor: RenderPiplineDescriptor {
     var name: String = "Basic Redner Pipline Decriptor"
     
-    var renderPiplineDescriptor: MTLRenderPipelineDescriptor {
-        let renderPiplineDescriptor = MTLRenderPipelineDescriptor()
-        renderPiplineDescriptor.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
-        renderPiplineDescriptor.vertexFunction = ShaderLibrary.Vertex(.Basic)
-        renderPiplineDescriptor.fragmentFunction = ShaderLibrary.Fragment(.Basic)
-        renderPiplineDescriptor.vertexDescriptor =  VertexDescriptorLibrary.Descriptor(.Basic)
-        
-        return renderPiplineDescriptor
+    var renderPiplineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPiplineDescriptor = MTLRenderPipelineDescriptor()
+        renderPiplineDescriptor?.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPiplineDescriptor?.vertexFunction = ShaderLibrary.Vertex(.Basic)
+        renderPiplineDescriptor?.fragmentFunction = ShaderLibrary.Fragment(.Basic)
+        renderPiplineDescriptor?.vertexDescriptor =  VertexDescriptorLibrary.Descriptor(.Basic)
     }
 }
