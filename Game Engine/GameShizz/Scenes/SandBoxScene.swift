@@ -6,6 +6,7 @@ class SandBoxScene: Scene {
     
     // SceneManager init때 호출됨
     override func buildScene() {
+        // 씬을 생성하고 자식들도 생성하고 자식들을 배치할때 사용
         addCamera(debugCamera)
         let count: Int = 5
         for y in -count..<count {
@@ -25,12 +26,13 @@ class SandBoxScene: Scene {
     
     // 렌더링중에 Renderer -> SceneManager -> 여기로 호출
     override func update(deltaTime: Float) {
-        // 각 Node == 게임오브젝트 의 방향을 지정
-        // Node.update -> GameObject.update
-        // 단 여기에서는 Node내에있는 변수중 rotation을 변경함
+        // 자식들을 == (point (gameObjct, Node)) 컨트롤 하고싶을때 추가로직을 사용함
+        
         /*for child in self.children {
             child.rotation.z += 0.02
         }*/
+        
+        // 즉각 Scene호출 혹은 없으면 Node로 호출됨
         super.update(deltaTime: deltaTime)
     }
 }

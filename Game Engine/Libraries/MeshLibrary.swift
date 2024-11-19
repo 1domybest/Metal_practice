@@ -39,7 +39,10 @@ class CustomMesh: Mesh {
     }
     
     init() {
+        // 버텍스 좌표 생성
         createVertices()
+        
+        // 버텍스 버퍼생성
         createBuffers()
     }
 

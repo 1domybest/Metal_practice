@@ -294,8 +294,8 @@
 		D1E0E23D2CEA22F2001E195B /* Game Objects */ = {
 			isa = PBXGroup;
 			children = (
-				D1E0E2342CEA213E001E195B /* Pointer.swift */,
 				D1E0E22E2CEA18B3001E195B /* GameObject.swift */,
+				D1E0E2342CEA213E001E195B /* Pointer.swift */,
 			);
 			path = "Game Objects";
 			sourceTree = "<group>";

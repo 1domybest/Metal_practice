@@ -30,11 +30,14 @@ class Scene: Node {
     
     override func update(deltaTime: Float) {
         updateSceneConstants()
+        // Node의 업데이트
         super.update(deltaTime: deltaTime)
     }
     
     override func render(renderCommandEncoder: any MTLRenderCommandEncoder) {
+        // 신의 위치 변경
         renderCommandEncoder.setVertexBytes(&sceneConstants, length: SceneConstants.stride(), index: 1)
+        
         super.render(renderCommandEncoder: renderCommandEncoder)
     }
 }
