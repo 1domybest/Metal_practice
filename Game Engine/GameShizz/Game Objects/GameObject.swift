@@ -12,6 +12,7 @@ class GameObject: Node{
 
     
     override func update(deltaTime: Float) {
+        print("GameObject")
         updateModelConstants()
     }
     
@@ -31,7 +32,7 @@ extension GameObject: Renderable {
                                                       index: 0)
         
                 // 움직임을 위한 메트릭스 버텍스
-                renderCommandEncoder.setVertexBytes(&modelContants, length: ModelConstants.stride() , index: 1)
+                renderCommandEncoder.setVertexBytes(&modelContants, length: ModelConstants.stride() , index: 2)
                 
                 
                 renderCommandEncoder.drawPrimitives(type: .triangle,

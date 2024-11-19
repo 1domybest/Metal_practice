@@ -2,6 +2,9 @@ import MetalKit
 
 // 노드의 집합체?
 class Scene: Node {
+    var cameraManager = CameraManager()
+    
+    var sceneConstants = SceneConstants()
     
     override init() {
         super.init()
@@ -9,4 +12,29 @@ class Scene: Node {
     }
     
     func buildScene() {}
+    
+    func addCamera(_ camera: Camera, _ isCurrentCamera: Bool = true) {
+        self.cameraManager.registerCamera(camera: camera)
+        if isCurrentCamera {
+            self.cameraManager.setCamera(camera.cameraType)
+        }
+    }
+    
+    func updateSceneConstants() {
+        sceneConstants.viewMatrix = cameraManager.currentCamera.viewMatrix
+    }
+    
+    func updateCamera(deltaTime: Float) {
+        cameraManager.update(deltaTime: deltaTime)
+    }
+    
+    override func update(deltaTime: Float) {
+        updateSceneConstants()
+        super.update(deltaTime: deltaTime)
+    }
+    
+    override func render(renderCommandEncoder: any MTLRenderCommandEncoder) {
+        renderCommandEncoder.setVertexBytes(&sceneConstants, length: SceneConstants.stride(), index: 1)
+        super.render(renderCommandEncoder: renderCommandEncoder)
+    }
 }

@@ -18,10 +18,12 @@ class Node {
     var children:[Node] = []
     
     func addChildren(_ chiild: Node) {
+        // childe = (Pointer == GameObject)
         children.append(chiild)
     }
     
     func update(deltaTime: Float) {
+        // childe = (Pointer == GameObject)
         // 여기서의 child 는 GameObject
         for child in children {
             // 이 함수를 실행시킨 SandBox에서 좌표를 수정한후 수정한 죄표를 토대로
