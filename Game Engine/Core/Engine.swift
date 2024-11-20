@@ -17,6 +17,9 @@ class Engine {
         // 알려주기 위한 작업
         VertexDescriptorLibrary.Initialize()
         
+        // 뎁스 깊이?
+        DepthStencilStateLibrary.Initialize()
+        
         // 파이프라인 디스크립토 생성 == 위에서만든 라이브러리 함수와 버텍스 디스크립토를 담는 파이프라인 설명객체
         RenderPiplineDescriptorLibrary.Initialize()
         

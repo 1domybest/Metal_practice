@@ -20,11 +20,14 @@ class SceneManager {
     }
     
     public static func TickScene(renderCommandEncoder: MTLRenderCommandEncoder, deltaTime: Float) {
-        
+        // 카메라 위치 업데이트
         _currentScene.updateCamera(deltaTime: deltaTime)
+        
+        // 오브젝트 위치 업데이트
         // SandBox -> Scene -> Node -> GameObject
         _currentScene.update(deltaTime: deltaTime)
         
+        // 오브젝트 렌더링
         // SandBox -> Scene -> Node -> GameObject.doRender()
         _currentScene.render(renderCommandEncoder: renderCommandEncoder)
     }

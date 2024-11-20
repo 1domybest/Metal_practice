@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BAB3DB66-8D24-4177-82E0-A26E47725255"
+            uuid = "7615395D-CE3E-4123-97C7-6AC9917BB43C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Game Engine/GameShizz/Scenes/SandBoxScene.swift"
+            filePath = "Game Engine/GameShizz/Game Objects/InstancedGameObject.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "update(deltaTime:)"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "init(meshType:instanceCount:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2D5B02E-A9F7-48C4-86A7-C0C5A98682E0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game Engine/GameShizz/Node.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "addChild(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

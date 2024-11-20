@@ -3,6 +3,7 @@ import Foundation
 
 enum VertexShaderTypes {
     case Basic
+    case Instanced
 }
 
 enum FragmentShaderTypes {
@@ -20,7 +21,11 @@ class ShaderLibrary {
     }
     
     public static func createDefaultShaders() {
+        // Vertex Shader
         vertexShaders.updateValue(Basic_VertexShader(), forKey: .Basic)
+        vertexShaders.updateValue(Instanced_VertexShader(), forKey: .Instanced)
+        
+        // Fragment Shader
         fragmentShaders.updateValue(Basic_FragmentShader(), forKey: .Basic)
     }
     
@@ -52,6 +57,20 @@ public struct Basic_VertexShader: Shader {
         function?.label = name
     }
 }
+
+public struct Instanced_VertexShader: Shader {
+    var name: String = "Instanced Vertex Shader"
+    
+    var functionName: String = "instanced_vertex_shader"
+    
+    var function: MTLFunction!
+    
+    init() {
+        function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)
+        function?.label = name
+    }
+}
+
 
 public struct Basic_FragmentShader: Shader {
     var name: String = "Basic Fragment Shader"

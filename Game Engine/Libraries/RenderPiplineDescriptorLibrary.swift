@@ -10,6 +10,7 @@ import MetalKit
 
 enum RenderPiplineDescriptorTypes {
     case Basic
+    case Instanced
 }
 
 class RenderPiplineDescriptorLibrary {
@@ -22,6 +23,7 @@ class RenderPiplineDescriptorLibrary {
     
     private static func createDefaultRenderPiplineDescriptors() {
         rednerPipelineDescriptors.updateValue(Basic_RednerPiplineDescriptor(), forKey: .Basic)
+        rednerPipelineDescriptors.updateValue(Instanced_RednerPiplineDescriptor(), forKey: .Instanced)
     }
     
     public static func Descriptor(_ rednerPiplineDescriptorType: RenderPiplineDescriptorTypes) -> MTLRenderPipelineDescriptor {
@@ -43,7 +45,24 @@ public struct Basic_RednerPiplineDescriptor: RenderPiplineDescriptor {
     init() {
         renderPiplineDescriptor = MTLRenderPipelineDescriptor()
         renderPiplineDescriptor?.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPiplineDescriptor?.depthAttachmentPixelFormat = Preferences.MainDepthPixelFormat
         renderPiplineDescriptor?.vertexFunction = ShaderLibrary.Vertex(.Basic)
+        renderPiplineDescriptor?.fragmentFunction = ShaderLibrary.Fragment(.Basic)
+        renderPiplineDescriptor?.vertexDescriptor =  VertexDescriptorLibrary.Descriptor(.Basic)
+    }
+}
+
+
+public struct Instanced_RednerPiplineDescriptor: RenderPiplineDescriptor {
+    var name: String = "Instanced Redner Pipline Decriptor"
+    
+    var renderPiplineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPiplineDescriptor = MTLRenderPipelineDescriptor()
+        renderPiplineDescriptor?.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPiplineDescriptor?.depthAttachmentPixelFormat = Preferences.MainDepthPixelFormat
+        renderPiplineDescriptor?.vertexFunction = ShaderLibrary.Vertex(.Instanced)
         renderPiplineDescriptor?.fragmentFunction = ShaderLibrary.Fragment(.Basic)
         renderPiplineDescriptor?.vertexDescriptor =  VertexDescriptorLibrary.Descriptor(.Basic)
     }

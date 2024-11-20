@@ -17,7 +17,7 @@ class Node {
     
     var children:[Node] = []
     
-    func addChildren(_ chiild: Node) {
+    func addChild(_ chiild: Node) {
         // childe = (Pointer == GameObject)
         children.append(chiild)
     }
